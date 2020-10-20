@@ -1,0 +1,119 @@
+page-landing {
+    .card-background-page {
+
+        ion-card {
+          position: relative;
+          text-align: center;
+          margin: 10px;
+          margin-left: auto;
+          margin-right: auto;
+          border-radius: 2px;
+          width: calc(100% - 7px);
+         // margin: 7px !important;
+        }
+    
+        .card-title {
+            background-color: #0000008c;
+            padding: 10px;
+            position: absolute;
+            top: 0;
+            font-size: 1.5em;
+            width: 100%;
+            font-weight: bold;
+            color: #fff;
+        }
+    
+        .card-subtitle {
+            font-size: 1.0em;
+            position: absolute;
+           // top: 52%;
+            width: 100%;
+            color: #fff;
+            background-color: #0000008c;
+            padding: 5px;
+        }
+
+    }
+    .scroll-content{
+        padding: 0px !important;
+        background-color: black;
+    }
+    .grid{
+        padding: 0px !important;
+    }
+    .row{
+        margin: -8px;
+       // margin-right: -28px;
+    }
+    ion-col{
+        padding: 0px !important;
+    }
+    ion-slides{
+        height:50% !important;
+    }
+
+    ion-icon{
+        width:75%;
+        padding-right: 2%;
+    }
+    .icon-title{
+        width:75%;
+        background-color: #0000008c;
+        padding: 10px;
+        position: absolute;
+        top: 0;
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #fff;
+    }
+    .icon-subtitle{
+        width: 73%;
+        font-size: 0.9em;
+        position: absolute;
+        bottom: 0;
+        color: #fff;
+        background-color: #000000c2;
+        padding: 5px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 3.5em;
+        padding: 5px;
+        white-space: pre-wrap;
+        font-family: "Roboto", "Helvetica Neue", sans-serif;
+    }
+    ion-label{
+        margin: 6px 8px 13px 0 !important;
+    }
+    ion-scroll[scrollX] {
+        white-space: nowrap;
+        height: 120px;
+        overflow: hidden;
+        .scroll-item {
+            display: inline-block;
+            width:75%;
+        padding-right: 2%;
+        }
+
+        .selectable-icon{
+            margin: 10px 20px 10px 20px;
+            color: red;
+            font-size: 100px;
+        }
+
+        ion-avatar img{
+            margin: 10px;
+        }
+
+    }
+
+    ion-scroll[scroll-avatar]{
+        height: 60px;
+    }
+
+    /* Hide ion-content scrollbar */
+
+    ::-webkit-scrollbar{
+        display:none;
+        }
+}

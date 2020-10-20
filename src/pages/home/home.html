@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      News/Events
+    </ion-title>
+     <ion-buttons end>
+      <button ion-button icon-only (click)="openServices()">
+        <ion-icon name="apps"></ion-icon>
+      </button>
+    </ion-buttons> 
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div padding>
+    <ion-segment [(ngModel)]="homepageSegment">
+      <ion-segment-button value="news">
+        News
+      </ion-segment-button>
+      <ion-segment-button value="events">
+        Events
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="homepageSegment">
+    <ion-list *ngSwitchCase="'news'">
+      <ion-item *ngFor="let news of newsData" (click)="onNewsList($event, news)">
+        <ion-thumbnail item-start>
+          <img *ngIf="news.Photos" src="{{news.Photos[0].ServerRelativeUrl}}">
+          <img *ngIf="news.Photos === null" src="../../assets/imgs/news-icon.jpg">
+        </ion-thumbnail>
+        <h2 class="newsHeading">{{news.newstitle}}</h2>
+        <p>{{news.newsdescription}}</p>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngSwitchCase="'events'">
+      <ion-item *ngFor="let event of eventData" (click)="onEventList($event, event)">
+        <ion-avatar item-start>
+          <div class="outerDate">
+            <span class="date">{{event.eventdate | date:'dd'}}</span>
+            <br>
+            <span class="month">{{event.eventdate | date:'MMM'}}</span>
+          </div>
+        </ion-avatar>
+        <h2 class="newsHeading">{{event.eventtitle}}</h2>
+        <p>Timing : {{event.eventdate | date:'hh:mma'}}</p>
+        <p>{{event.eventdescription}}</p>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
